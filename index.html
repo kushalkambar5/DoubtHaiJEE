@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="DoubtHaiJEE - Your go-to platform to clear all JEE doubts instantly with expert help." />
+  <title>DoubtHaiJEE | Clear JEE Doubts Instantly</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1117;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #1f2937;
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 2px solid #3b82f6;
+    }
+    header h1 {
+      color: #3b82f6;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #90caf9;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(145deg, #1e293b, #111827);
+    }
+    .hero h2 {
+      font-size: 2em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+    .cta-button {
+      padding: 12px 24px;
+      font-size: 1em;
+      color: white;
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #2563eb;
+    }
+
+    .form-section {
+      background-color: #1e1e1e;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .form-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #90caf9;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      background-color: #2d2d2d;
+      color: #ffffff;
+      font-size: 1em;
+    }
+    form button {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    form button:hover {
+      background-color: #2563eb;
+    }
+    #formMessage {
+      margin-top: 15px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      background-color: #1e1e1e;
+    }
+    .feature-card {
+      background-color: #2d2d2d;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card h3 {
+      color: #90caf9;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      color: #d1d5db;
+    }
+    footer {
+      background-color: #111827;
+      text-align: center;
+      padding: 20px;
+      color: #9ca3af;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DoubtHaiJEE</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#ask-doubt">Ask Doubt</a>
+      <a href="#">Topics</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Clear Your JEE Doubts Instantly</h2>
+    <p>Get expert solutions to your toughest Physics, Chemistry, and Math questions in seconds. No more waiting, no more guessing.</p>
+    <a href="#ask-doubt"><button class="cta-button">Ask a Doubt Now</button></a>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Instant Doubt Solving</h3>
+      <p>Upload or type your JEE questions and get instant step-by-step explanations.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Topic-Wise Practice</h3>
+      <p>Revise and test your concepts with curated practice sets by subject experts.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Trusted by Toppers</h3>
+      <p>Used by thousands of students across India preparing for JEE Main and Advanced.</p>
+    </div>
+  </section>
+
+  <section class="form-section" id="ask-doubt">
+    <h2>Ask Your Doubt</h2>
+    <form id="doubtForm" action="https://getform.io/f/bqomnwrb" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <textarea name="doubt" rows="5" placeholder="Describe your doubt here..." required></textarea>
+      <button type="submit">Submit Doubt</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 DoubtHaiJEE. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('doubtForm');
+      const message = document.getElementById('formMessage');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        message.style.color = '#ffffff';
+        message.textContent = "Submitting your doubt...";
+
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            message.style.color = '#10b981';
+            message.textContent = "Your doubt has been successfully submitted and will be clarified soon on this website.";
+          } else {
+            message.style.color = '#ef4444';
+            message.textContent = "Oops! Something went wrong. Please try again.";
+          }
+        } catch (error) {
+          message.style.color = '#ef4444';
+          message.textContent = "Network error. Please check your internet connection.";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
