@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A clear and detailed derivation of the radius of curvature formula for a curve at a point, including step-by-step explanation and visual aid." />
-    <meta name="keywords" content="Radius of Curvature, Calculus, Derivation, Curve Geometry, Mathematics, Differentiation" />
-    <meta name="author" content="Your Name" />
-    <title>Derivation of Radius of Curvature | Curve Geometry Explained</title>
+    <meta name="description" content="Step-by-step derivation of the radius of curvature formula in calculus. Perfect for JEE aspirants." />
+    <meta name="keywords" content="Radius of Curvature, Calculus, Derivation, Curve Geometry, JEE, Mathematics" />
+    <meta name="author" content="DoubtHaiJEE Team" />
+    <meta property="og:title" content="Radius of Curvature Derivation | DoubtHaiJEE">
+    <meta property="og:description" content="Step-by-step derivation of the radius of curvature formula in calculus. Perfect for JEE aspirants.">
+    <title>Radius of Curvature | DoubtHaiJEE</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #121212;
             color: #e0e0e0;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+        header {
+            background: #1f1f1f;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h2 {
+            margin: 0;
+            color: #90caf9;
         }
         .container {
             max-width: 900px;
@@ -22,31 +39,17 @@
             margin: 40px auto;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 1.2s ease-in-out;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #ffffff;
             margin-bottom: 30px;
         }
         p {
-            font-size: 1.15em;
-            line-height: 1.8;
-        }
-        .formula {
-            font-weight: bold;
             font-size: 1.2em;
-            color: #90caf9;
-            text-align: center;
-            margin: 20px 0;
-            opacity: 0;
-            animation: slideUp 1s ease-in-out forwards;
+            line-height: 2;
+            margin-bottom: 20px;
         }
-        .formula:nth-of-type(1) { animation-delay: 0.2s; }
-        .formula:nth-of-type(2) { animation-delay: 0.4s; }
-        .formula:nth-of-type(3) { animation-delay: 0.6s; }
-        .formula:nth-of-type(4) { animation-delay: 0.8s; }
-
         img {
             display: block;
             margin: 30px auto;
@@ -56,47 +59,15 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
-            animation: fadeInZoom 1.5s ease-in-out;
         }
         img:hover {
             transform: scale(1.05);
         }
-        code {
-            background: #2d2d2d;
-            color: #ffffff;
-            padding: 3px 6px;
-            border-radius: 5px;
-            font-family: monospace;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInZoom {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Comment Section */
         .comment-section {
             margin-top: 60px;
             padding-top: 30px;
             border-top: 2px solid #333;
         }
-
-        .comment-section h2 {
-            color: #90caf9;
-            margin-bottom: 20px;
-        }
-
         .comment-form input,
         .comment-form textarea {
             width: 100%;
@@ -107,7 +78,6 @@
             color: #e0e0e0;
             font-size: 1em;
         }
-
         .comment-form button {
             background-color: #3f83f8;
             color: white;
@@ -118,95 +88,88 @@
             font-size: 1em;
             margin-top: 10px;
         }
-
         .comment-form button:hover {
             background-color: #336ad3;
         }
-
-        .comments-list {
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            border-top: 1px solid #333;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Derivation: Radius of Curvature of a Curve at a Point</h1>
-        <p>
-            To derive the formula for the radius of curvature <code>R</code> of a curve at any point:
-        </p>
-        <div class="formula">
-            R = [1 + (dy/dx)<sup>2</sup>]<sup>3/2</sup> / |d<sup>2</sup>y/dx<sup>2</sup>|
-        </div>
-        <img src="https://i.ibb.co/39spFPTY/download.png" alt="Illustration of radius of curvature for a curve" />
-        <p>
-            Consider a point <code>(x, y)</code> on the curve <code>y = f(x)</code>. This point lies on an imaginary circle whose radius is <code>R</code>, representing the radius of curvature.
-            Let the center of this circle be at <code>(x<sub>0</sub>, y<sub>0</sub>)</code>. The equation of the circle is:
-        </p>
-        <div class="formula">
-            (x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> = R<sup>2</sup> &nbsp;&nbsp; (1)
-        </div>
-        <p>
-            Differentiating equation (1) with respect to <code>x</code>:
-        </p>
-        <div class="formula">
-            2(x - x<sub>0</sub>) + 2(y - y<sub>0</sub>) dy/dx = 0
-        </div>
-        <div class="formula">
-            (x - x<sub>0</sub>) + (y - y<sub>0</sub>) dy/dx = 0 &nbsp;&nbsp; (2)
-        </div>
-        <p>
-            Differentiating again with respect to <code>x</code>:
-        </p>
-        <div class="formula">
-            1 + (y - y<sub>0</sub>) d<sup>2</sup>y/dx<sup>2</sup> + (dy/dx)<sup>2</sup> = 0 &nbsp;&nbsp; (3)
-        </div>
-        <p>
-            Solving the above equations and eliminating the variables gives us the final formula for the radius of curvature:
-        </p>
-        <div class="formula">
-            R = [1 + (dy/dx)<sup>2</sup>]<sup>3/2</sup> / |d<sup>2</sup>y/dx<sup>2</sup>|
-        </div>
+    <header>
+        <h2>DoubtHaiJEE</h2>
+    </header>
 
-        <!-- Comment Section -->
+    <div class="container">
+        <h1>Radius of Curvature: Derivation</h1>
+        <p>To derive the formula for the radius of curvature \( R \) of a curve at any point:</p>
+        <p>\[ R = \frac{[1 + (\frac{dy}{dx})^2]^{3/2}}{\left| \frac{d^2y}{dx^2} \right|} \]</p>
+
+        <img src="https://i.ibb.co/39spFPTY/download.png" alt="Graph showing radius of curvature from tangent point on a curve" />
+
+        <p>Consider a point \( (x, y) \) on the curve \( y = f(x) \). The imaginary circle at this point has radius \( R \), and its center is at \( (x_0, y_0) \).</p>
+
+        <p>Equation of the circle:
+        \[ (x - x_0)^2 + (y - y_0)^2 = R^2 \tag{1} \]</p>
+
+        <p>Differentiating equation (1) with respect to \( x \):
+        \[ (x - x_0) + (y - y_0) \cdot \frac{dy}{dx} = 0 \tag{2} \]</p>
+
+        <p>Differentiating again:
+        \[ 1 + (y - y_0) \cdot \frac{d^2y}{dx^2} + \left( \frac{dy}{dx} \right)^2 = 0 \tag{3} \]</p>
+
+        <p>Solving these gives:
+        \[ R = \frac{[1 + (\frac{dy}{dx})^2]^{3/2}}{\left| \frac{d^2y}{dx^2} \right|} \]</p>
+
         <div class="comment-section">
             <h2>Comments</h2>
             <form id="commentForm" class="comment-form" action="https://getform.io/f/bqomnwrb" method="POST">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required /><br><br>
-                
-                <label for="comment">Comment Your Experience, Query or Doubts(We will try to solve those also):</label><br>
-                <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-                
-                <!-- Honeypot field to reduce spam -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" aria-label="Your name" required /><br><br>
+
+                <label for="comment">Comment Your Experience, Query or Doubts:</label>
+                <textarea id="comment" name="comment" rows="4" aria-label="Your comment or question" required></textarea><br><br>
+
                 <input type="text" name="_gotcha" style="display:none" />
-                
+
                 <button type="submit">Post Comment</button>
             </form>
             <div id="formMessage" style="margin-top: 20px; color: #90caf9; font-weight: bold;"></div>
         </div>
     </div>
 
+    <footer>
+        &copy; 2025 DoubtHaiJEE. All rights reserved.
+    </footer>
+
     <script>
     document.getElementById('commentForm').addEventListener('submit', async function(event) {
-        event.preventDefault(); // prevent normal form submission
-
+        event.preventDefault();
         const form = event.target;
         const formMessage = document.getElementById('formMessage');
-
         const formData = new FormData(form);
 
         try {
             const response = await fetch(form.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (response.ok) {
-                formMessage.textContent = "Your Query is successfully submitted";
+                formMessage.textContent = "Your query is successfully submitted.";
                 form.reset();
+                formMessage.scrollIntoView({ behavior: 'smooth' });
             } else {
                 formMessage.textContent = "There was a problem submitting your query. Please try again.";
             }
