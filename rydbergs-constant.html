@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rydberg's constant dependence on Reduced Mass for JEE</title>
+    <!-- Load MathJax for beautiful LaTeX rendering -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  .logo {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .logo a {
+    color: #00ff88;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .logo a:hover {
+    color: #00cc6a;
+    transform: scale(1.1);
+  }
+  h1 {
+    text-align: center;
+    color: #00ff88;
+    animation: fadeIn 1.5s ease-in;
+  }
+  h2 {
+    color: #00cc6a;
+    margin-top: 1.5em;
+    animation: slideIn 1s ease-out;
+  }
+  .formula {
+    font-size: 1.4em;
+    margin: 2em 0;
+    text-align: center;
+  }
+  .formula-box {
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 1em 0;
+    background-color: #2a2a2a;
+    transition: transform 0.3s ease;
+  }
+  .formula-box:hover {
+    transform: scale(1.02);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin: 8px 0;
+    color: #cccccc;
+  }
+  img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,255,136,0.2);
+    transition: transform 0.3s ease;
+  }
+  img:hover {
+    transform: scale(1.05);
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideIn {
+    from { 
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+    <div class="logo">
+        <a href="index.html">DoubtHaiJEE</a>
+    </div>
+    <h1>Understanding the Rydberg Constant and Its Connection to Reduced Mass for JEE</h1>
+    <p>When we talk about atomic spectra and the beautiful series of lines that emerge from elements like hydrogen, one fundamental constant comes into play: the Rydberg constant. But what exactly is it, and how does it relate to the electron's mass and the center of mass of atoms? Let's dive deep!</p>
+
+<h2>What is the Rydberg Constant?</h2>
+<p>The Rydberg constant, denoted by R<sub>∞</sub>
+    <br>R<sub>∞</sub>, is a physical constant associated with the wavelengths of light emitted or absorbed by atoms. It plays a crucial role in describing the spectral lines of hydrogen and hydrogen-like atoms.
+    <p>
+      There are two formulas for the Rydberg constant according to whether the system is infinite mass system or finite mass system.
+    </p>
+
+    <h2>The formula for Infinite mass system is:</h2>
+<div class="formula-box">
+  <p class="formula">
+    <strong>
+      \[
+      R_\infty = \frac{m_e e^4}{8 \varepsilon_0^2 h^3 c}
+      \]
+    </strong>
+    <div style="text-align: left;">where:</div>
+<ul>
+  <li>m<sub>e</sub> is the electron mass.</li>
+  <li>e is the elementary charge.</li>
+  <li>ε<sub>0</sub> is the vacuum permittivity.</li>
+  <li>h is Planck's constant.</li>
+  <li>c is the speed of light.</li>
+</ul>
+  </p>
+</div>
+
+<p>R<sub>∞</sub> exact value is <strong>1.0973731568539 × 10<sup>7</sup></strong></p>
+
+<h2>The formula for Finite mass system<br>(The Role of the Center of Mass: Reduced Mass Correction)<br>(Accurate and Exact Formula)</h2>
+<p>In real atoms, especially hydrogen, the electron doesn't orbit a stationary nucleus. Instead, both the electron and the nucleus orbit around their common center of mass.</p>
+
+<p>To account for this motion, physicists use the reduced mass μ:</p>
+<div class="formula-box">
+  \[
+  \mu = \frac{m_e m_N}{m_e + m_N}
+  \]
+  where:
+  <ul>
+    <li>m<sub>N</sub> is the mass of the nucleus.</li>
+  </ul>
+</div>
+
+<p>The actual Rydberg constant for hydrogen is then adjusted:</p>
+<div class="formula-box">
+    <strong>
+      \[
+      R = R_\infty \cdot \frac{\mu}{m_e}
+      \]
+    </strong>
+</div>
+
+<h4>For H-atom,</h4>
+<p class="formula">
+  \[
+  R = R_\infty \cdot \frac{m_N}{m_N + m_e}
+  \]
+  
+    \[
+    R = (1.0973731568539 \times 10^7) \cdot \frac{1.67262192369 \times 10^{-27}}{(1.67262192369 \times 10^{-27}) + (9.1093837015 \times 10^{-31})}
+    \]
+    \[
+    = (1.0973731568539 \times 10^7) \cdot \frac{1.67262192369 \times 10^{-27}}{1.67353286206 \times 10^{-27}}
+    \]
+    \[
+    = (1.0973731568539 \times 10^7) \cdot 0.9994565
+    \]
+    \[
+    = 1.0967758 \times 10^7 \text{ m}^{-1}
+    \]
+</p>
+
+<h4>For He-atom,</h4>
+<p class="formula">
+  \[
+  R = R_\infty \cdot \frac{m_N}{m_N + m_e}
+  \]
+  \[
+  = R_\infty \cdot \frac{(m_p + m_n)}{(m_p + m_n) + m_e}
+  \]
+    \[
+    = (1.0973731568539 \times 10^7) \cdot \frac{6.6465 \times 10^{-27}}{(6.6465 \times 10^{-27}) + (9.1093837015 \times 10^{-31})}
+    \]
+    \[
+    = 1.09722200 \times 10^7 \text{ m}^{-1}
+    \]
+</p>
+
+<p>Like this we can find the Rydberg constant for any atom.</p>
+
+<p>This image shows the variation of Rydberg constant with respect to the mass of the nucleus/mass number of the atom.</p>
+
+<img src="material/rydberg-constant.png" alt="Rydberg Constant vs. Mass of Nucleus">
+<br><br><br>
+
+<div class="footer" style="text-align: center;">
+  <a class="home-button" href="https://doubthaijee.vercel.app">🏠 Go to Home</a>
+  <div style="margin-top: 20px;">
+    <a href="https://doubthaijee.vercel.app/spinel-compounds.html">Spinal Compounds for JEE</a> |
+    <a href="https://doubthaijee.vercel.app/derivation-of-radius-of-curvature.html">Radius of Curvature: Derivation</a>
+  </div>
+</div>
+
+</body>
+</html>
