@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="DoubtHaiJEE - Clear your JEE Mains and Advanced doubts by asking our Team and make your question practice" />
-  <meta name="keywords" content="Jee, Mains, Advanced, Neet, Jee doubts, Ask jee doubts, online doubt clearing" />
-  <title>DoubtHaiJEE | Clear JEE MAINS & ADVANCED Doubts Instantly</title>
+  <meta name="description" content="DoubtHaiJEE - Clear your JEE Mains and Advanced doubts instantly with expert solutions and comprehensive practice materials" />
+  <meta name="keywords" content="JEE Mains, JEE Advanced, NEET, JEE doubts, online tutoring, JEE preparation, engineering entrance exam" />
+  <title>DoubtHaiJEE | Expert Solutions for JEE MAINS & ADVANCED</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
       --bg-color: #0f1117;
@@ -15,6 +16,9 @@
       --hover-accent: #2563eb;
       --header-bg: #1f2937;
       --section-bg: #1e1e1e;
+      --success: #10b981;
+      --error: #ef4444;
+      --transition: all 0.3s ease;
     }
 
     [data-theme="light"] {
@@ -32,260 +36,393 @@
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      transition: var(--transition);
     }
 
     header {
       background-color: var(--header-bg);
-      padding: 20px 40px;
+      padding: 1.25rem 2.5rem;
       text-align: center;
       border-bottom: 2px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
     header h1 {
       color: var(--accent);
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
     nav a {
       color: var(--text-color);
       text-decoration: none;
-      margin: 0 15px;
       font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: var(--transition);
     }
+
     nav a:hover {
       color: var(--accent);
+      background-color: rgba(59, 130, 246, 0.1);
     }
 
     .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 30px;
+      position: fixed;
+      top: 1.25rem;
+      right: 1.875rem;
       cursor: pointer;
-      font-size: 1em;
+      font-size: 1rem;
       background: var(--accent);
       color: white;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
       border: none;
+      transition: var(--transition);
+      z-index: 1001;
+    }
+
+    .theme-toggle:hover {
+      background: var(--hover-accent);
+      transform: translateY(-2px);
     }
 
     .hero {
-      padding: 60px 20px;
+      padding: 5rem 1.25rem;
       text-align: center;
-      background: linear-gradient(145deg, #1e293b, #111827);
+      background: linear-gradient(145deg, var(--header-bg), var(--bg-color));
+      position: relative;
+      overflow: hidden;
     }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), transparent);
+      z-index: 0;
+    }
+
     .hero h2 {
-      font-size: 2em;
+      font-size: 3rem;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
     }
+
     .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
       color: #cbd5e1;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
     }
+
     .cta-button {
-      padding: 12px 24px;
-      font-size: 1em;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
       color: white;
       background-color: var(--accent);
       border: none;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
     }
+
     .cta-button:hover {
       background-color: var(--hover-accent);
-    }
-
-    .form-section {
-      background-color: var(--section-bg);
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .form-section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: var(--accent);
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      font-size: 1em;
-    }
-    form button {
-      background-color: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-    form button:hover {
-      background-color: var(--hover-accent);
-    }
-
-    #formMessage {
-      margin-top: 15px;
-      font-size: 1em;
-      font-weight: bold;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 60px 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 5rem 2.5rem;
       background-color: var(--section-bg);
     }
+
     .feature-card {
       background-color: var(--card-bg);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
+
     .feature-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
+
     .feature-card h3 {
       color: var(--accent);
-      margin-bottom: 10px;
+      margin: 1rem 0;
+      font-size: 1.5rem;
     }
+
     .feature-card p {
       color: var(--text-color);
+      line-height: 1.8;
     }
 
     .curvature-section {
       text-align: center;
-      padding: 60px 20px;
+      padding: 5rem 1.25rem;
       background-color: var(--header-bg);
     }
+
+    .curvature-section .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .curvature-section a {
       text-decoration: none;
       color: inherit;
       display: block;
-      margin-bottom: 40px;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      transition: var(--transition);
     }
+
+    .curvature-section a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
     .curvature-section h2 {
       color: var(--accent);
-      font-size: 1.8em;
-      margin-bottom: 20px;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
     }
-    .curvature-section a img {
-      width: 20%;
+
+    .curvature-section img {
+      width: 100%;
+      max-width: 300px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    .curvature-section a img:hover {
-      transform: scale(1.05);
+
+    .form-section {
+      background-color: var(--section-bg);
+      padding: 5rem 1.25rem;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.625rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+
+    form button {
+      background-color: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    form button:hover {
+      background-color: var(--hover-accent);
+      transform: translateY(-2px);
+    }
+
+    #formMessage {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      transition: var(--transition);
     }
 
     footer {
       background-color: var(--header-bg);
       text-align: center;
-      padding: 20px;
-      color: #9ca3af;
-      font-size: 0.9em;
+      padding: 2rem;
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .curvature-section img {
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body data-theme="dark">
 
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </button>
 
   <header>
     <h1>DoubtHaiJEE</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#ask-doubt">Ask Doubt</a>
-      <a href="#">Topics</a>
-      <a href="#">Login</a>
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#ask-doubt"><i class="fas fa-question-circle"></i> Ask Doubt</a>
+      <a href="#"><i class="fas fa-book"></i> Topics</a>
+      <a href="#"><i class="fas fa-user"></i> Login</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Clear Your JEE Doubts Instantly</h2>
-    <p>Get expert solutions to your toughest Physics, Chemistry, and Math questions in seconds. No more waiting, no more guessing.</p>
-    <a href="#ask-doubt"><button class="cta-button">Ask a Doubt Now</button></a>
+    <h2>Master JEE With Expert Guidance</h2>
+    <p>Get detailed solutions to your Physics, Chemistry, and Mathematics questions from experienced educators. Clear your concepts and boost your confidence.</p>
+    <a href="#ask-doubt">
+      <button class="cta-button">
+        <i class="fas fa-paper-plane"></i> Ask Your Doubt
+      </button>
+    </a>
   </section>
 
   <section class="features">
     <div class="feature-card">
-      <h3>Instant Doubt Solving</h3>
-      <p>Upload or type your JEE questions and get instant step-by-step explanations.</p>
+      <i class="fas fa-bolt fa-3x" style="color: var(--accent)"></i>
+      <h3>Instant Solutions</h3>
+      <p>Get comprehensive step-by-step solutions to your JEE questions within minutes.</p>
     </div>
     <div class="feature-card">
-      <h3>Topic-Wise Practice</h3>
-      <p>Revise and test your concepts with curated practice sets by subject experts.</p>
+      <i class="fas fa-tasks fa-3x" style="color: var(--accent)"></i>
+      <h3>Structured Practice</h3>
+      <p>Access carefully curated topic-wise practice sets designed by JEE experts.</p>
     </div>
     <div class="feature-card">
-      <h3>Trusted by Toppers</h3>
-      <p>Used by thousands of students across India preparing for JEE Main and Advanced.</p>
+      <i class="fas fa-medal fa-3x" style="color: var(--accent)"></i>
+      <h3>Proven Success</h3>
+      <p>Join thousands of successful JEE aspirants who trust our platform.</p>
     </div>
   </section>
 
   <section class="curvature-section">
-    <a href="spinel-compounds.html" target="_blank">
-      <h2>Spinel Compounds for JEE</h2>
-      <img src="material/spinal-compounds.png" alt="Spinal Compounds" />
-    </a>
+    <div class="grid">
+      <a href="spinel-compounds.html" target="_blank">
+        <h2>Spinel Compounds</h2>
+        <img src="material/spinal-compounds.png" alt="Spinel Compounds" loading="lazy" />
+      </a>
 
-    <a href="second-degree-conics.html" target="_blank">
-    <h2>Second Degree Conics Equation for JEE</h2>
-    <img src="/material/rotated-conic.png" alt="Second Degree Conics" />
-  </a>
+      <a href="second-degree-conics.html" target="_blank">
+        <h2>Second Degree Conics</h2>
+        <img src="/material/rotated-conic.png" alt="Second Degree Conics" loading="lazy" />
+      </a>
 
-    <a href="rydbergs-constant.html" target="_blank">
-    <h2>Second Degree Conics Equation for JEE</h2>
-    <img src="/material/rydberg-constant.png" alt="Rydbergs constant for JEE" />
-  </a>
+      <a href="rydbergs-constant.html" target="_blank">
+        <h2>Rydberg's Constant</h2>
+        <img src="/material/rydberg-constant.png" alt="Rydberg's Constant" loading="lazy" />
+      </a>
 
-
-    <a href="derivation-of-radius-of-curvature.html" target="_blank">
-      <h2>Radius of Curvature of a Curve at any point</h2>
-      <img src="material/radius-of-curvature.png" alt="Radius of Curvature" />
-    </a>
+      <a href="derivation-of-radius-of-curvature.html" target="_blank">
+        <h2>Radius of Curvature</h2>
+        <img src="material/radius-of-curvature.png" alt="Radius of Curvature" loading="lazy" />
+      </a>
+    </div>
   </section>
 
   <section class="form-section" id="ask-doubt">
     <h2>Ask Your Doubt</h2>
     <form id="doubtForm" action="https://getform.io/f/bqomnwrb" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <textarea name="doubt" rows="5" placeholder="Describe your doubt here..." required></textarea>
-      <button type="submit">Submit Doubt</button>
+      <input type="text" name="name" placeholder="Enter your name" required />
+      <textarea name="doubt" rows="5" placeholder="Describe your doubt in detail..." required></textarea>
+      <button type="submit">
+        <i class="fas fa-paper-plane"></i> Submit Doubt
+      </button>
       <p id="formMessage"></p>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 DoubtHaiJEE. All rights reserved.
+    <p>&copy; 2025 DoubtHaiJEE. All rights reserved.</p>
   </footer>
 
   <script>
-    // Form Submission
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('doubtForm');
       const message = document.getElementById('formMessage');
+      const themeToggle = document.querySelector('.theme-toggle i');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -302,31 +439,33 @@
 
           if (response.ok) {
             form.reset();
-            message.style.color = '#10b981';
-            message.textContent = "Your doubt has been successfully submitted and will be clarified soon on this website.";
+            message.style.color = 'var(--success)';
+            message.textContent = "Success! Your doubt will be answered soon.";
           } else {
-            message.style.color = '#ef4444';
-            message.textContent = "Oops! Something went wrong. Please try again.";
+            throw new Error('Submission failed');
           }
         } catch (error) {
-          message.style.color = '#ef4444';
-          message.textContent = "Network error. Please check your internet connection.";
+          message.style.color = 'var(--error)';
+          message.textContent = "Error submitting doubt. Please try again.";
         }
       });
 
-      // Load saved theme
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.body.setAttribute('data-theme', savedTheme);
-      }
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.body.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
     });
 
-    // Theme Toggle Function
     function toggleTheme() {
       const current = document.body.getAttribute('data-theme');
       const newTheme = current === 'dark' ? 'light' : 'dark';
       document.body.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    }
+
+    function updateThemeIcon(theme) {
+      const icon = document.querySelector('.theme-toggle i');
+      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
   </script>
 
