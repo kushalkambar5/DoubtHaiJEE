@@ -1,173 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="What are Spinel compounds? Types of Spinel compounds. How to remember? How to know that the compound is normal or inverse spinel compound?" />
-    <meta name="keywords" content="spinel compounds for jee, inverse spinel structure, normal spinel structure, spinel and inverse spinel, inverse spinel, inverse spinel structure of fe3o4, Solid state, spinel compounds structure and property relations, types of spinel, types of spinel oxides, types of spinel ferrites, types of spinel ferrites, what are spinel compounds, chemical composition of spinel compounds" />
+    <meta name="description" content="DoubtHaiJEE - Master Spinel Compounds for JEE with fun explanations, types, and tips to tell normal vs. inverse spinels!" />
+    <meta name="keywords" content="spinel compounds for jee, inverse spinel structure, spinel and inverse spinel, inverse spinel, inverse spinel structure of fe3o4, Solid state, spinel compounds structure and property relations, types of spinel, types of spinel oxides, types of spinel ferrites, types of spinel ferrites, what are spinel compounds, chemical composition of spinel compounds" />
     <meta name="author" content="DoubtHaiJEE Team" />
-    <title>SPINEL COMPOUNDS | SOLID STATE | JEE MAINS & ADVANCED</title>
+    <title>DoubtHaiJEE | Spinel Compounds with JEE Swag 😎</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --accent: #f59e0b;
+            --hover-accent: #d97706;
+            --header-bg: #1e3a8a;
+            --section-bg: #111827;
+            --success: #34d399;
+            --error: #f87171;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
             padding: 20px;
         }
 
+        header {
+            background-color: var(--header-bg);
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: bounceIn 1s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        header h1 {
+            color: var(--accent);
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            background-color: rgba(245, 158, 11, 0.15);
+            transform: scale(1.05);
+        }
+
         .container {
-            background-color: #fff;
             max-width: 960px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .content-section::before {
+            content: '🚖';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 3rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
         }
 
         h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
-        h2, h3 {
-            color: #34495e;
-            margin-top: 30px;
+        h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
         br {
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
 
         code, sub, sup {
-            background-color: #eef;
+            background-color: rgba(245, 158, 11, 0.1);
             padding: 2px 5px;
             border-radius: 3px;
-        }
-
-        .formula-box {
-            background: #f0f9ff;
-            border-left: 4px solid #3498db;
-            padding: 10px 20px;
-            margin: 15px 0;
             font-family: monospace;
         }
 
+        .formula-box {
+            background: rgba(245, 158, 11, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+            border-radius: 0.5rem;
+        }
+
         a {
-            color: #2980b9;
+            color: var(--accent);
             text-decoration: none;
+            transition: var(--transition);
         }
 
         a:hover {
+            color: var(--hover-accent);
             text-decoration: underline;
         }
 
         img {
-            max-width: 300px;
+            max-width: 320px;
             width: 100%;
             height: auto;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            margin-top: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 0.75rem;
+            margin: 1.5rem auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             display: block;
+            transition: var(--transition);
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
 
         .side-image {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            max-width: 120px;
-            width: 100%;
-            height: auto;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 150px;
+            margin: 1rem auto;
         }
 
-        .other-contents {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #ddd;
+        .home-button {
+            display: inline-flex;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .other-contents h2 {
-            margin-bottom: 10px;
+        .home-button:hover {
+            background-color: var(--hover-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
         }
 
-        .other-contents a {
-            font-size: 16px;
-            display: inline-block;
-            margin-top: 5px;
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--accent);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        .footer p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1.2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            img {
+                max-width: 80%;
+            }
+
+            .home-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
         }
     </style>
 </head>
 <body>
- <header>
-    <h1>DoubtHaiJEE</h1>
-    <nav>
-      <a href="https://doubthaijee.vercel.app/">Home</a>
-    </nav>
-  </header>
+    <header>
+        <h1>DoubtHaiJEE 😎</h1>
+        <nav>
+            <a href="https://doubthaijee.vercel.app/"><i class="fas fa-home"></i> Home</a>
+            <a href="https://doubthaijee.vercel.app/#ask-doubt"><i class="fas fa-question-circle"></i> Ask Doubt</a>
+            <a href="https://doubthaijee.vercel.app/"><i class="fas fa-book"></i> Topics</a>
+            <a href="https://doubthaijee.vercel.app/"><i class="fas fa-user"></i> Login</a>
+        </nav>
+    </header>
+
     <div class="container">
-        <h1>SPINEL COMPOUNDS FOR JEE</h1>
-        These are the compoonds of the form AB<sub>2</sub>O<sub>4</sub> <br> 
-        where, <br> 
-        A is a Group-2 or D-Block metal <br> 
-        B is a D-Block metal <br> 
-        O is Oxygen <br> 
-        These compounds are formed by the combination of two different metals with oxygen. <br> 
-        The general formula for these compounds is AB<sub>2</sub>O<sub>4</sub>. <br> 
-        The most common examples of spinel compounds are: <br>
-        FeCr<sub>2</sub>O<sub>4</sub>, CoFe<sub>2</sub>O<sub>4</sub>, NiFe<sub>2</sub>O<sub>4</sub>, MnFe<sub>2</sub>O<sub>4</sub>, Fe<sub>3</sub>O<sub>4</sub> etc.
-        
-        <br><br><br>These are devided into two types: <br>
-        1. Normal spinel compounds <br>
-        2. Inverse spinel compounds 
-        
-        <br><br>1. Normal spinel compounds: In these compounds, <br> 
-        A<sup>2+</sup> ions occupy 1/8th part of the tetrahedral voids and B<sup>3+</sup> ions occupy half of the octahedral voids in the close packed structure of oxygen ions and O<sup>2-</sup> ions are arranged in a cubic close packed structure.
+        <div class="content-section">
+            <h1>Spinel Compounds? Let’s Crack ‘Em Like JEE Champs! 😜</h1>
+            <p>Ready to dive into Spinel Compounds and ace that JEE Chemistry section? These are super cool compounds with the formula <code>AB<sub>2</sub>O<sub>4</sub></code>. Let’s break it down in true JEE style:</p>
+            <p>Where:</p>
+            <ul>
+                <li><strong>A</strong>: Group-2 or D-Block metal 🧪</li>
+                <li><strong>B</strong>: D-Block metal ⚙️</li>
+                <li><strong>O</strong>: Oxygen 🌬️</li>
+            </ul>
+            <p>Think of spinels as a metal-oxygen party, mixing two metals with oxygen to form <code>AB<sub>2</sub>O<sub>4</sub></code>. Some all-star examples you’ll see in JEE:</p>
+            <p><code>FeCr<sub>2</sub>O<sub>4</sub>, CoFe<sub>2</sub>O<sub>4</sub>, NiFe<sub>2</sub>O<sub>4</sub>, MnFe<sub>2</sub>O<sub>4</sub>, Fe<sub>3</sub>O<sub>4</sub></code></p>
+            <p>Spinel compounds come in two epic types:</p>
+            <ol>
+                <li><strong>Normal Spinel Compounds</strong> 😎</li>
+                <li><strong>Inverse Spinel Compounds</strong> 🤓</li>
+            </ol>
+        </div>
 
-        <br><br>2. Inverse spinel compounds: In these compounds, <br> 
-        A<sup>2+</sup> ions occupy 1/4th part of the octahedral voids and B<sup>3+</sup> ions occupy 1/8th part of the tetrahedral and 1/4th octahedral voids in the close packed structure of oxygen ions and O<sup>2-</sup> ions are arranged in a cubic close packed structure.
+        <div class="content-section">
+            <h2>Normal vs. Inverse Spinels: The JEE-Level Breakdown! 💪</h2>
+            <h3>1. Normal Spinel Compounds</h3>
+            <p>In these compounds, the ions are chilling like this:</p>
+            <p><code>A<sup>2+</sup></code> ions grab <strong>1/8th</strong> of the tetrahedral voids, while <code>B<sup>3+</sup></code> ions take <strong>half</strong> of the octahedral voids. The <code>O<sup>2-</sup></code> ions form a cubic close-packed (CCP) structure. Easy, right?</p>
 
-        <h2>Derivation of formula of both types of spinel compounds:</h2>
+            <h3>2. Inverse Spinel Compounds</h3>
+            <p>Here, things get a bit wilder (like a JEE mock test!):</p>
+            <p><code>A<sup>2+</sup></code> ions occupy <strong>1/4th</strong> of the octahedral voids, while <code>B<sup>3+</sup></code> ions split between <strong>1/8th</strong> of the tetrahedral voids and <strong>1/4th</strong> of the octahedral voids. The <code>O<sup>2-</sup></code> ions still rock the CCP structure.</p>
+        </div>
 
-        Since CCP or FCC lattice contains net 4 atoms of oxygen, So <br> 
-        Total number of tetrahedralvoids = 2 X 4 = 8 and <br> 
-        Total number of octahedral voids = 1 X 4 = 4
+        <div class="content-section">
+            <h2>Deriving Spinel Formulas Like a Boss! 🌟</h2>
+            <p>Since a CCP (or FCC) lattice has <strong>4 oxygen atoms</strong>, we get:</p>
+            <p class="formula-box">
+                Total tetrahedral voids = 2 × 4 = 8<br>
+                Total octahedral voids = 1 × 4 = 4
+            </p>
 
-        <h3>1. Normal spinel compounds:</h3>
-        Since <br> 
-        A<sup>2+</sup> ions occupy 1/8th part of the tetrahedral voids so net number of A<sup>2+</sup> ions = 8 X 1/8 = 1 and <br> 
-        B<sup>3+</sup> ions occupy half of the octahedral voids so net number of B<sup>3+</sup> ions = 4 X 1/2 = 2 <br> 
-        The formula of normal spinel compound = AB<sub>2</sub>O<sub>4</sub>
+            <h3>1. Normal Spinel Compounds</h3>
+            <p>Let’s crunch the numbers:</p>
+            <p><code>A<sup>2+</sup></code> ions in <strong>1/8th</strong> of tetrahedral voids: 8 × 1/8 = <strong>1</strong></p>
+            <p><code>B<sup>3+</sup></code> ions in <strong>half</strong> of octahedral voids: 4 × 1/2 = <strong>2</strong></p>
+            <p>Formula: <code>AB<sub>2</sub>O<sub>4</sub></code> 🎉</p>
 
-        <h3>2. Inverse spinel compounds:</h3>
-        Since <br> 
-        A<sup>2+</sup> ions occupy 1/4th part of the octahedral voids so net number of A<sup>2+</sup> ions = 4 X 1/4 = 1 and <br> 
-        B<sup>3+</sup> ions occupy 1/8th part of the tetrahedral voids so net number of B<sup>3+</sup> ions = 8 X 1/8 = 1 and since B<sup>3+</sup> ions occupy 1/4th part of the octahedral voids so net number of B<sup>3+</sup> ions = 4 X 1/4 = 1 <br> 
-        The formula of inverse spinel compound = (AB)BO<sub>4</sub>
+            <h3>2. Inverse Spinel Compounds</h3>
+            <p>Here’s the math for inverse spinels:</p>
+            <p><code>A<sup>2+</sup></code> ions in <strong>1/4th</strong> of octahedral voids: 4 × 1/4 = <strong>1</strong></p>
+            <p><code>B<sup>3+</sup></code> ions in <strong>1/8th</strong> of tetrahedral voids: 8 × 1/8 = <strong>1</strong></p>
+            <p><code>B<sup>3+</sup></code> ions in <strong>1/4th</strong> of octahedral voids: 4 × 1/4 = <strong>1</strong></p>
+            <p>Formula: <code>(AB)BO<sub>4</sub></code> 😎</p>
+        </div>
 
-        <h2>How to know that the compound is normal or inverse spinel compound?</h2>
-        See this video on YouTube: 
-        <a href="">How to know that the compound is normal or inverse spinel compound?</a>
+        <div class="content-section">
+            <h2>Normal or Inverse? Crack the Code! 🕵️‍♂️</h2>
+            <p>Wanna know how to spot normal vs. inverse spinels in a JEE question? Check out this YouTube video:</p>
+            <p><a href="">How to know that the compound is normal or inverse spinel compound?</a> <!-- TODO: Update with actual YouTube link --></p>
+            <p>To memorize the formulas like a JEE topper, check this awesome image:</p>
+            <img src="https://i.ibb.co/k2TDcyVb/Chat-GPT-Image-May-21-2025-02-02-03-PM.png" alt="Spinel Memory Aid" />
+            <p>And here’s a dope visual of a spinel compound to seal the deal:</p>
+            <img src="https://i.ibb.co/gMXp0dgq/spinel-Chat-GPT-Image-May-21-2025-03-40-58-PM.png" alt="Spinel Compound" class="side-image" />
+        </div>
 
-        <br><br>
-        To remember the formula of normal and inverse spinel compounds, <br>
-        You can refer this given image: <br>
-        <img src="https://i.ibb.co/k2TDcyVb/Chat-GPT-Image-May-21-2025-02-02-03-PM.png" alt="" />
-        
-        <img src="https://i.ibb.co/gMXp0dgq/spinel-Chat-GPT-Image-May-21-2025-03-40-58-PM.png" alt="Spinel Compound" class="side-image" />
+        <div class="content-section">
+            <h2>A Funny JEE Spinel Story! 😂</h2>
+            <p>Picture this: Rohan, a JEE aspirant, is cramming spinel compounds the night before his mock test. He dreams he’s a <code>B<sup>3+</sup></code> ion, stuck in a tetrahedral void, yelling, “Bro, I’m supposed to be in octahedral for inverse spinels!” His friend, an <code>A<sup>2+</sup></code> ion, laughs, “Chill, dude, you’re in the wrong void again!” Next morning, Rohan aces the spinel question, muttering, “Normal or inverse, I’m the void master now!” 😎</p>
+        </div>
 
-        <div class="other-contents">
-            <h2>Check out our other contents</h2>
-            <a href="https://doubthaijee.vercel.app/derivation-of-radius-of-curvature.html" target="_blank">
-                Radius of curvature of a curve at any point
-            </a>
+        <div class="footer">
+            <a class="home-button" href="https://doubthaijee.vercel.app/"><i class="fas fa-home"></i> Back to Home Base</a>
+            <div style="margin-top: 20px;">
+                <a href="sdce.html">Second Degree Conics 📈</a> |
+                <a href="derivation-of-radius-of-curvature.html">Radius of Curvature 🔄</a>
+            </div>
+            <p>© 2025 DoubtHaiJEE. Made with <i class="fas fa-heart" style="color: var(--accent)"></i> for JEE rockstars!</p>
         </div>
     </div>
 </body>
