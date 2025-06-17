@@ -3,32 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="DoubtHaiJEE - Clear your JEE Mains and Advanced doubts instantly with expert solutions and comprehensive practice materials" />
-  <meta name="keywords" content="JEE Mains, JEE Advanced, NEET, JEE doubts, online tutoring, JEE preparation, engineering entrance exam" />
-  <title>DoubtHaiJEE | Expert Solutions for JEE MAINS & ADVANCED</title>
+  <meta name="description" content="DoubtHaiJEE - Clear your JEE Mains and Advanced doubts with a dash of fun, expert solutions, and epic practice materials!" />
+  <meta name="keywords" content="JEE Mains, JEE Advanced, NEET, JEE doubts, online tutoring, JEE preparation, engineering entrance exam, fun learning" />
+  <title>DoubtHaiJEE | Your Fun JEE Doubt-Busting Buddy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --bg-color: #0f1117;
-      --text-color: #e0e0e0;
-      --card-bg: #2d2d2d;
-      --accent: #3b82f6;
-      --hover-accent: #2563eb;
-      --header-bg: #1f2937;
-      --section-bg: #1e1e1e;
-      --success: #10b981;
-      --error: #ef4444;
+      --bg-color: #0f172a;
+      --text-color: #e2e8f0;
+      --card-bg: #1e293b;
+      --accent: #f59e0b;
+      --hover-accent: #d97706;
+      --header-bg: #1e3a8a;
+      --section-bg: #111827;
+      --success: #34d399;
+      --error: #f87171;
       --transition: all 0.3s ease;
-    }
-
-    [data-theme="light"] {
-      --bg-color: #ffffff;
-      --text-color: #111827;
-      --card-bg: #f0f0f0;
-      --accent: #2563eb;
-      --hover-accent: #1d4ed8;
-      --header-bg: #e0e7ff;
-      --section-bg: #f9fafb;
     }
 
     * {
@@ -42,72 +32,65 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
-      transition: var(--transition);
     }
 
     header {
       background-color: var(--header-bg);
-      padding: 1.25rem 2.5rem;
+      padding: 1.5rem 2.5rem;
       text-align: center;
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     header h1 {
       color: var(--accent);
-      font-size: 2.5rem;
-      margin-bottom: 0.625rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      animation: bounceIn 1s ease;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: var(--text-color);
       text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
       border-radius: 0.5rem;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     nav a:hover {
       color: var(--accent);
-      background-color: rgba(59, 130, 246, 0.1);
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 1.25rem;
-      right: 1.875rem;
-      cursor: pointer;
-      font-size: 1rem;
-      background: var(--accent);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: none;
-      transition: var(--transition);
-      z-index: 1001;
-    }
-
-    .theme-toggle:hover {
-      background: var(--hover-accent);
-      transform: translateY(-2px);
+      background-color: rgba(245, 158, 11, 0.15);
+      transform: scale(1.05);
     }
 
     .hero {
-      padding: 5rem 1.25rem;
+      padding: 6rem 1.5rem;
       text-align: center;
-      background: linear-gradient(145deg, var(--header-bg), var(--bg-color));
+      background: linear-gradient(-45deg, #1e3a8a, #7c3aed, #db2777, #f59e0b);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       position: relative;
       overflow: hidden;
     }
@@ -115,27 +98,35 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), transparent);
+      top: -20%;
+      left: -20%;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle at center, rgba(245,158,11,0.3), transparent 70%);
+      filter: blur(100px);
       z-index: 0;
     }
 
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .hero h2 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #ffffff;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       position: relative;
       z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      color: #cbd5e1;
-      max-width: 800px;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      color: #e2e8f0;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
       position: relative;
@@ -143,8 +134,8 @@
     }
 
     .cta-button {
-      padding: 1rem 2rem;
-      font-size: 1.125rem;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.2rem;
       color: white;
       background-color: var(--accent);
       border: none;
@@ -153,28 +144,32 @@
       transition: var(--transition);
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: 600;
+      font-weight: 700;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 auto;
     }
 
     .cta-button:hover {
       background-color: var(--hover-accent);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      padding: 5rem 2.5rem;
+      padding: 6rem 2.5rem;
       background-color: var(--section-bg);
     }
 
     .feature-card {
       background-color: var(--card-bg);
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       transition: var(--transition);
@@ -182,33 +177,46 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '🚖';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 3rem;
+      opacity: 0.1;
+      transform: rotate(15deg);
     }
 
     .feature-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
     .feature-card h3 {
       color: var(--accent);
-      margin: 1rem 0;
-      font-size: 1.5rem;
+      margin: 1.2rem 0;
+      font-size: 1.6rem;
     }
 
     .feature-card p {
       color: var(--text-color);
       line-height: 1.8;
+      font-size: 1.1rem;
     }
 
     .curvature-section {
       text-align: center;
-      padding: 5rem 1.25rem;
+      padding: 6rem 1.5rem;
       background-color: var(--header-bg);
     }
 
     .curvature-section .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
@@ -218,42 +226,81 @@
       text-decoration: none;
       color: inherit;
       display: block;
-      padding: 1.5rem;
+      padding: 1.8rem;
       background: var(--card-bg);
       border-radius: 1rem;
       transition: var(--transition);
+      position: relative;
     }
 
     .curvature-section a:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
     .curvature-section h2 {
       color: var(--accent);
-      font-size: 1.5rem;
-      margin-bottom: 1.25rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
     }
 
     .curvature-section img {
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
       height: auto;
       border-radius: 0.75rem;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .curvature-section a:hover img {
+      transform: scale(1.05);
+    }
+
+    .content-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .content-section::before {
+      content: '🚖';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 3rem;
+      opacity: 0.1;
+      transform: rotate(15deg);
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     .form-section {
       background-color: var(--section-bg);
-      padding: 5rem 1.25rem;
+      padding: 6rem 1.5rem;
       text-align: center;
     }
 
     form {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       background: var(--card-bg);
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
@@ -261,13 +308,13 @@
     form input,
     form textarea {
       width: 100%;
-      padding: 1rem;
-      margin: 0.625rem 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.2rem;
+      margin: 0.75rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 0.5rem;
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: var(--transition);
     }
 
@@ -275,33 +322,37 @@
     form textarea:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
     }
 
     form button {
       background-color: var(--accent);
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2.5rem;
       border: none;
       border-radius: 0.5rem;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
       transition: var(--transition);
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     form button:hover {
       background-color: var(--hover-accent);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     #formMessage {
-      margin-top: 1rem;
-      font-size: 1rem;
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 500;
-      padding: 0.75rem;
+      padding: 0.8rem;
       border-radius: 0.5rem;
       transition: var(--transition);
     }
@@ -309,39 +360,50 @@
     footer {
       background-color: var(--header-bg);
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
       color: var(--text-color);
-      font-size: 0.9rem;
+      font-size: 1rem;
+    }
+
+    footer p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     @media (max-width: 768px) {
       header {
-        padding: 1rem;
+        padding: 1.2rem;
       }
 
       nav {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.6rem;
       }
 
       .hero h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
       }
 
       .curvature-section img {
-        width: 80%;
+        width: 85%;
+      }
+
+      .content-section {
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
-<body data-theme="dark">
-
-  <button class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-moon"></i>
-  </button>
+<body>
 
   <header>
-    <h1>DoubtHaiJEE</h1>
+    <h1>DoubtHaiJEE 😎</h1>
     <nav>
       <a href="#"><i class="fas fa-home"></i> Home</a>
       <a href="#ask-doubt"><i class="fas fa-question-circle"></i> Ask Doubt</a>
@@ -351,83 +413,85 @@
   </header>
 
   <section class="hero">
-    <h2>Master JEE With Expert Guidance</h2>
-    <p>Get detailed solutions to your Physics, Chemistry, and Mathematics questions from experienced educators. Clear your concepts and boost your confidence.</p>
-    <a href="#ask-doubt">
-      <button class="cta-button">
-        <i class="fas fa-paper-plane"></i> Ask Your Doubt
-      </button>
-    </a>
+    <h2>Blast Your JEE Doubts to Bits! 🚖</h2>
+    <p>Stuck on Physics, Chem, or Maths? Our super-cool experts are here to drop knowledge bombs and make you a JEE rockstar! 🌟</p>
+    <button class="cta-button" onclick="window.location.href='#ask-doubt'">
+      <i class="fas fa-paper-plane"></i> Fire Away Your Doubt!
+    </button>
   </section>
 
   <section class="features">
     <div class="feature-card">
       <i class="fas fa-bolt fa-3x" style="color: var(--accent)"></i>
-      <h3>Instant Solutions</h3>
-      <p>Get comprehensive step-by-step solutions to your JEE questions within minutes.</p>
+      <h3>Lightning-Fast Answers ⚡</h3>
+      <p>Get your JEE doubts zapped with step-by-step solutions faster than you can say "Newton’s Laws"!</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-tasks fa-3x" style="color: var(--accent)"></i>
-      <h3>Structured Practice</h3>
-      <p>Access carefully curated topic-wise practice sets designed by JEE experts.</p>
+      <h3>Epic Practice Vibes 📚</h3>
+      <p>Dive into handpicked, topic-wise practice sets that make studying feel like a superhero training montage.</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-medal fa-3x" style="color: var(--accent)"></i>
-      <h3>Proven Success</h3>
-      <p>Join thousands of successful JEE aspirants who trust our platform.</p>
+      <h3>Join the JEE Legends 🏆</h3>
+      <p>Thousands of champs trust us to turn their doubts into victories. Be the next JEE superstar!</p>
     </div>
   </section>
 
   <section class="curvature-section">
     <div class="grid">
       <a href="spinel-compounds.html" target="_blank">
-        <h2>Spinel Compounds</h2>
+        <h2>Spinel Compounds 🧪</h2>
         <img src="material/spinal-compounds.png" alt="Spinel Compounds" loading="lazy" />
       </a>
 
       <a href="second-degree-conics.html" target="_blank">
-        <h2>Second Degree Conics</h2>
+        <h2>Second Degree Conics 📈</h2>
         <img src="/material/rotated-conic.png" alt="Second Degree Conics" loading="lazy" />
       </a>
 
       <a href="rydbergs-constant.html" target="_blank">
-        <h2>Rydberg's Constant</h2>
+        <h2>Rydberg's Constant 🌌</h2>
         <img src="/material/rydberg-constant.png" alt="Rydberg's Constant" loading="lazy" />
       </a>
 
       <a href="derivation-of-radius-of-curvature.html" target="_blank">
-        <h2>Radius of Curvature</h2>
+        <h2>Radius of Curvature 🔄</h2>
         <img src="material/radius-of-curvature.png" alt="Radius of Curvature" loading="lazy" />
       </a>
     </div>
   </section>
 
   <section class="form-section" id="ask-doubt">
-    <h2>Ask Your Doubt</h2>
+    <h2>Drop Your Doubt Here! 😜</h2>
     <form id="doubtForm" action="https://getform.io/f/bqomnwrb" method="POST">
-      <input type="text" name="name" placeholder="Enter your name" required />
-      <textarea name="doubt" rows="5" placeholder="Describe your doubt in detail..." required></textarea>
+      <input type="text" name="name" placeholder="Your cool name, please 😎" required />
+      <textarea name="doubt" rows="5" placeholder="Spill the beans—what’s puzzling you? 🤔" required></textarea>
       <button type="submit">
-        <i class="fas fa-paper-plane"></i> Submit Doubt
+        <i class="fas fa-paper-plane"></i> Send That Doubt to Space!
       </button>
       <p id="formMessage"></p>
     </form>
   </section>
 
+  <div class="content-section">
+    <h2>A Funny JEE Doubt-Busting Tale! 😂</h2>
+    <p>Late at night, Priya, a JEE aspirant, was wrestling with a killer physics doubt on projectile motion. In her dream, she’s a tiny particle stuck in a parabola, shouting, “Help, my range is wrong!” Suddenly, DoubtHaiJEE’s expert zooms in like a superhero, saying, “Chill, champ, just tweak that angle!” Morning comes, Priya submits her doubt on DoubtHaiJEE, gets a crystal-clear solution, and struts into her mock test like a JEE rockstar! 😎</p>
+  </div>
+
   <footer>
-    <p>&copy; 2025 DoubtHaiJEE. All rights reserved.</p>
+    <p>© 2025 DoubtHaiJEE. Made with <i class="fas fa-heart" style="color: var(--accent)"></i> for JEE champs!</p>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('doubtForm');
       const message = document.getElementById('formMessage');
-      const themeToggle = document.querySelector('.theme-toggle i');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         message.style.color = '#ffffff';
-        message.textContent = "Submitting your doubt...";
+        message.textContent = "Launching your doubt into the universe... 🚖";
 
         const formData = new FormData(form);
         try {
@@ -440,33 +504,16 @@
           if (response.ok) {
             form.reset();
             message.style.color = 'var(--success)';
-            message.textContent = "Success! Your doubt will be answered soon.";
+            message.textContent = "Boom! Your doubt is on its way to our experts! 🌟";
           } else {
             throw new Error('Submission failed');
           }
         } catch (error) {
           message.style.color = 'var(--error)';
-          message.textContent = "Error submitting doubt. Please try again.";
+          message.textContent = "Oops! Something broke. Try again, champ! 😅";
         }
       });
-
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.body.setAttribute('data-theme', savedTheme);
-      updateThemeIcon(savedTheme);
     });
-
-    function toggleTheme() {
-      const current = document.body.getAttribute('data-theme');
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      document.body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    }
-
-    function updateThemeIcon(theme) {
-      const icon = document.querySelector('.theme-toggle i');
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
   </script>
 
 </body>
